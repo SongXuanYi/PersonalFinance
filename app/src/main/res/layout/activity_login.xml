@@ -11,8 +11,9 @@
             android:layout_height="42dp"
             android:inputType="phone"
             android:ems="10"
-            android:id="@+id/phoneText_signup"
-            app:layout_constraintStart_toStartOf="@+id/passwordText_signup" app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/phoneText_login"
+            android:hint="Phone"
+            app:layout_constraintStart_toStartOf="@+id/passwordText_login" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.499" app:layout_constraintHorizontal_bias="0.0"/>
     <EditText
@@ -20,11 +21,12 @@
             android:layout_height="42dp"
             android:inputType="textPassword"
             android:ems="10"
-            android:id="@+id/passwordText_signup"
+            android:hint="Password"
+            android:id="@+id/passwordText_login"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.046"
-            app:layout_constraintTop_toBottomOf="@+id/phoneText_signup"/>
+            app:layout_constraintTop_toBottomOf="@+id/phoneText_login"/>
     <ImageView
             android:layout_width="411dp"
             android:layout_height="220dp" app:srcCompat="@drawable/ic_launcher_foreground"
@@ -36,10 +38,10 @@
             android:text="Login"
             android:layout_width="94dp"
             android:layout_height="52dp" android:id="@+id/signup_text"
-            app:layout_constraintStart_toStartOf="@+id/phoneText_signup" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/phoneText_login" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintHorizontal_bias="0.0" app:layout_constraintVertical_bias="0.948"
-            app:layout_constraintBottom_toTopOf="@+id/phoneText_signup" android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/phoneText_login" android:textAlignment="center"
             android:textSize="30sp" android:textColor="#000000"/>
     <Button
             android:text="Login"

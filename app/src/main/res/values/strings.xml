@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">PersonalFinance</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_home">明细</string>
+    <string name="title_dashboard">记账</string>
+    <string name="title_notifications">图表</string>
     <string name="title_activity_finance">MainActivity</string>
+    <string name="please_addin">点击下方加号记一笔账吧！</string>
 </resources>

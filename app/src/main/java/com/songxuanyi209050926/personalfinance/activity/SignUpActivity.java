@@ -2,7 +2,6 @@ package com.songxuanyi209050926.personalfinance.activity;
 
 import android.content.Intent;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,8 +28,8 @@ public class SignUpActivity extends AppCompatActivity {
 
         //![1]
         mNameText = (EditText) findViewById(R.id.username_text);
-        mPhoneText = (EditText) findViewById(R.id.phoneText_signup);
-        mPasswordText = (EditText) findViewById(R.id.passwordText_signup);
+        mPhoneText = (EditText) findViewById(R.id.phoneText_login);
+        mPasswordText = (EditText) findViewById(R.id.passwordText_login);
         mSignUpButton = (Button) findViewById(R.id.signupButton);
         mToLoginText = (TextView) findViewById(R.id.to_login_text);
 

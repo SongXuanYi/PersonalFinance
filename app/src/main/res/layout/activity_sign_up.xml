@@ -12,10 +12,10 @@
             android:layout_height="42dp"
             android:inputType="phone"
             android:ems="10"
-            android:id="@+id/phoneText_signup"
+            android:id="@+id/phoneText_login"
             android:hint="Phone"
             android:textColorHint="#3B000000"
-            app:layout_constraintStart_toStartOf="@+id/passwordText_signup" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/passwordText_login" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.58" app:layout_constraintHorizontal_bias="0.0"/>
     <EditText
@@ -23,13 +23,13 @@
             android:layout_height="42dp"
             android:inputType="textPassword"
             android:ems="10"
-            android:id="@+id/passwordText_signup"
+            android:id="@+id/passwordText_login"
             android:hint="Password"
             android:textColorHint="#3B000000"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.046"
-            app:layout_constraintTop_toBottomOf="@+id/phoneText_signup"/>
+            app:layout_constraintTop_toBottomOf="@+id/phoneText_login"/>
     <ImageView
             android:layout_width="411dp"
             android:layout_height="220dp" app:srcCompat="@drawable/ic_launcher_foreground"
@@ -70,7 +70,7 @@
             android:id="@+id/username_text"
             android:hint="Username"
             android:textColorHint="#3B000000"
-            app:layout_constraintStart_toStartOf="@+id/phoneText_signup" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/phoneText_login" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="@+id/imageView2"
             app:layout_constraintVertical_bias="0.499" app:layout_constraintHorizontal_bias="0.0"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
