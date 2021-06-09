@@ -13,4 +13,16 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <!--自下而上进入 自上而下退出 -->
+    <style name="AppAnimationTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- 将Activity的Theme设置成透明 -->
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:activityOpenEnterAnimation">@anim/in_from_up</item>
+        <item name="android:activityOpenExitAnimation">@anim/in_from_up</item>
+        <item name="android:activityCloseEnterAnimation">@anim/out_to_down</item>
+        <item name="android:activityCloseExitAnimation">@anim/out_to_down</item>
+    </style>
+
 </resources>

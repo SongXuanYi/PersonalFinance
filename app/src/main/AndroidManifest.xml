@@ -9,11 +9,12 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.PersonalFinance">
+        <activity android:name=".activity.BookKeepActivity">
+        </activity>
         <activity
                 android:name=".activity.MainActivity"
                 android:label="@string/title_activity_main">
         </activity>
-
         <activity android:name=".activity.SignUpActivity">
         </activity>
         <activity android:name=".activity.LoginActivity">
