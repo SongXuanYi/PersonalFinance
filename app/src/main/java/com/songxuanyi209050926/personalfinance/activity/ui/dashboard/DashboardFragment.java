@@ -1,5 +1,7 @@
 package com.songxuanyi209050926.personalfinance.activity.ui.dashboard;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,9 +14,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import com.songxuanyi209050926.personalfinance.Bean.Money;
 import com.songxuanyi209050926.personalfinance.R;
+import com.songxuanyi209050926.personalfinance.activity.MainActivity;
 import com.songxuanyi209050926.personalfinance.service.UserService;
 import com.songxuanyi209050926.personalfinance.service.impl.UserServiceImpl;
 import com.songxuanyi209050926.personalfinance.util.GetTime;
+import org.jetbrains.annotations.NotNull;
 
 
 public class DashboardFragment extends Fragment {
@@ -31,12 +35,12 @@ public class DashboardFragment extends Fragment {
     private int oof;
     private Money money;
     private UserService service = new UserServiceImpl();
-    private String username ="宋";
+    private String username="宋";
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
-        date = GetTime.getTime();
         //获取当地日期
+        date = GetTime.getTime();
         mTimeText = root.findViewById(R.id.local_time);
         mTimeText.setText(date);
 
@@ -45,7 +49,7 @@ public class DashboardFragment extends Fragment {
         mTypeText = root.findViewById(R.id.type_text);
         mRemakeText = root.findViewById(R.id.remake_text);
 
-
+        //收入
         mIncomeButton = root.findViewById(R.id.income_button);
         mIncomeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,15 +57,43 @@ public class DashboardFragment extends Fragment {
                 proName = mProNameText.getText().toString();
                 oof = Integer.parseInt(mMoneyText.getText().toString());
                 type = mTypeText.getText().toString();
-                remake=mRemakeText.getText().toString();
-                money = new Money(username,oof,proName,type,remake,date);
-                int i = service.addMoneyInDB(getContext(),money);
-                if (i>0) {
-                    Log.d("DB","插入成功");
+                remake = mRemakeText.getText().toString();
+                money = new Money(username, oof, proName, type, remake, date);
+                int i = service.addMoneyInDB(getContext(), money);
+                if (i > 0) {
+                    Intent intent = new Intent(getActivity(), MainActivity.class);
+                    startActivity(intent);
+
+                    Log.d("DB", "收入插入成功");
+                }
+            }
+        });
+
+        //支出
+        mExpensesButton = root.findViewById(R.id.exepenses_button);
+        mExpensesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                proName = mProNameText.getText().toString();
+                oof = -Integer.parseInt(mMoneyText.getText().toString());
+                type = mTypeText.getText().toString();
+                remake = mRemakeText.getText().toString();
+                money = new Money(username, oof, proName, type, remake, date);
+                int i = service.addMoneyInDB(getContext(), money);
+                if (i > 0) {
+                    Intent intent = new Intent(getActivity(), MainActivity.class);
+                    startActivity(intent);
+
+                    Log.d("DB", "支出插入成功");
                 }
             }
         });
         return root;
     }
 
+    @Override
+    public void onAttach(@NonNull @NotNull Activity activity) {
+        super.onAttach(activity);
+        username=((MainActivity)activity).findUsername();
+    }
 }

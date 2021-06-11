@@ -12,6 +12,7 @@ public class MoneyDBHelper extends SQLiteOpenHelper {
             "proname text not null," +
             "type text not null ," +
             "remake text ," +
+            "date text not null," +
             "oof integer)";
     private Context mContext;
 

@@ -9,6 +9,7 @@
 package com.songxuanyi209050926.personalfinance.activity;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -16,7 +17,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
 import com.songxuanyi209050926.personalfinance.Bean.User;
 import com.songxuanyi209050926.personalfinance.R;
 import com.songxuanyi209050926.personalfinance.service.UserService;
@@ -45,13 +45,17 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 UserService service = new UserServiceImpl();
+
                 //若账号密码正确则user对象被封装；
                 User user = service.isUserByPhoneAndPassword(getApplicationContext(), mPhoneText.getText().toString(), mPasswordText.getText().toString());
+
                 //实现登录界面到记账界面的跳转
                 if (user != null) {
+
                     Toast.makeText(getApplicationContext(), "欢迎您，" + user.getUsername(), Toast.LENGTH_SHORT).show();
                     Log.d("isUser", "登录成功");
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    intent.putExtra("username",user.getUsername());
                     startActivity(intent);
                 } else {
                     Toast.makeText(getApplicationContext(), "登录失败", Toast.LENGTH_SHORT).show();
@@ -69,4 +73,5 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
 }

@@ -1,31 +1,82 @@
 package com.songxuanyi209050926.personalfinance.activity.ui.home;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.view.*;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import com.songxuanyi209050926.personalfinance.Bean.Money;
 import com.songxuanyi209050926.personalfinance.R;
+import com.songxuanyi209050926.personalfinance.activity.MainActivity;
+import com.songxuanyi209050926.personalfinance.service.UserService;
+import com.songxuanyi209050926.personalfinance.service.impl.UserServiceImpl;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.List;
 
 public class HomeFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
+    private RecyclerView mMoneyRecyclerView;
+    private MoneyAdapter mAdapter;
+    private UserService service = new UserServiceImpl();
+    private String username;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-            ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
-//        final TextView textView = root.findViewById(R.id.text_home);
-//        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-//            @Override
-//            public void onChanged(@Nullable String s) {
-//                textView.setText(s);
-//            }
-//        });
+
+        mMoneyRecyclerView = (RecyclerView) root.findViewById(R.id.recyclerview_home);
+        mMoneyRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+//        updateUI();
         return root;
     }
 
+    private class MoneyHolder extends  RecyclerView.ViewHolder{
 
+        public MoneyHolder(LayoutInflater inflater,ViewGroup parent) {
+            super(inflater.inflate(R.layout.fragment_home,parent,false));
+        }
+    }
+
+    private class MoneyAdapter extends RecyclerView.Adapter<MoneyHolder>{
+
+        private List<Money> mMoney;
+
+        public MoneyAdapter(List<Money> money){
+            mMoney = money;
+        }
+
+        @NonNull
+        @NotNull
+        @Override
+        public MoneyHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
+            LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
+            return new MoneyHolder(layoutInflater,parent);
+        }
+
+        @Override
+        public void onBindViewHolder(@NonNull @NotNull MoneyHolder holder, int position) {
+
+        }
+
+        @Override
+        public int getItemCount() {
+            return mMoney.size();
+        }
+    }
+
+    private void updateUI(){
+        List<Money> monies = service.findAllMoney(getContext(),username);
+        mAdapter = new MoneyAdapter(monies);
+        mMoneyRecyclerView.setAdapter(mAdapter);
+    }
+
+    @Override
+    public void onAttach(@NonNull @NotNull Activity activity) {
+        super.onAttach(activity);
+        username=((MainActivity)activity).findUsername();
+    }
 }

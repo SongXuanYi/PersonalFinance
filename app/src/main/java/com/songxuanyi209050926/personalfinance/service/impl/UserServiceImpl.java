@@ -7,6 +7,8 @@ import com.songxuanyi209050926.personalfinance.dao.UserDao;
 import com.songxuanyi209050926.personalfinance.dao.impl.UserDaoImpl;
 import com.songxuanyi209050926.personalfinance.service.UserService;
 
+import java.util.List;
+
 public class UserServiceImpl implements UserService {
 
     UserDao dao = new UserDaoImpl();
@@ -24,5 +26,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public int addMoneyInDB(Context context, Money money) {
         return dao.addMoneyInDB(context,money);
+    }
+
+    @Override
+    public List<Money> findAllMoney(Context context, String username) {
+        return dao.findAllMoney(context,username);
     }
 }

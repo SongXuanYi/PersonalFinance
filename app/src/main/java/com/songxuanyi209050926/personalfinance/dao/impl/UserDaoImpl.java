@@ -10,6 +10,9 @@ import com.songxuanyi209050926.personalfinance.dao.UserDao;
 import com.songxuanyi209050926.personalfinance.util.MoneyDBHelper;
 import com.songxuanyi209050926.personalfinance.util.MyDBHelper;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class UserDaoImpl implements UserDao {
 
     private MyDBHelper dbHelper;
@@ -64,16 +67,35 @@ public class UserDaoImpl implements UserDao {
         values.put("proname",money.getProName());
         values.put("type",money.getType());
         values.put("remake",money.getRemake());
+        values.put("date",money.getDate());
         values.put("oof",money.getOof());
         int i = (int) db.insert("money",null,values);
         values.clear();
         db.close();
         return i;
     }
-    public static final String CREATE_MONEYDATA = "create table money(" +
-            "mid integer primary key autoincrement," +
-            "username text not null ," +
-            "type text not null ," +
-            "remake text ," +
-            "oof integer)";
+
+    @Override
+    public List<Money> findAllMoney(Context context, String username) {
+        moneyDBHelper = new MoneyDBHelper(context,"money",null,1);
+        SQLiteDatabase db =moneyDBHelper.getWritableDatabase();
+        Cursor cursor = db.rawQuery("select * from money where username=?", new String[]{username});
+        List<Money> list = new ArrayList<>();
+        Money money = null;
+        while (cursor.moveToNext()) {
+            int mid = cursor.getInt(cursor.getColumnIndex("mid"));
+            String uname = cursor.getString(cursor.getColumnIndex("username"));
+            String proName = cursor.getString(cursor.getColumnIndex("proname"));
+            String type = cursor.getString(cursor.getColumnIndex("type"));
+            String remake = cursor.getString(cursor.getColumnIndex("remake"));
+            String date = cursor.getString(cursor.getColumnIndex("date"));
+            int oof = cursor.getInt(cursor.getColumnIndex("oof"));
+            money = new Money(username,oof,proName,type,remake,date);
+            money.setMid(mid);
+            list.add(money);
+        }
+        db.close();
+        return list;
+    }
+
 }

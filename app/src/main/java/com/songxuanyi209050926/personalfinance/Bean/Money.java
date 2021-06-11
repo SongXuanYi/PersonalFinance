@@ -4,7 +4,7 @@ package com.songxuanyi209050926.personalfinance.Bean;
 收入和支出（包括但不限于以下字段：项目名称，金额，录入时间，类别(信用卡/现金)
  */
 public class Money {
-
+    private int mid;
     private int oof;
     private String type;
     private String date;
@@ -25,6 +25,14 @@ public class Money {
         this.oof = oof;
     }
 
+    public int getMid() {
+        return mid;
+    }
+
+    public void setMid(int mid) {
+        this.mid = mid;
+    }
+
     public int getOof() {
         return oof;
     }
@@ -40,7 +48,6 @@ public class Money {
     public void setRemake(String remake) {
         this.remake = remake;
     }
-
 
 
     public String getType() {
