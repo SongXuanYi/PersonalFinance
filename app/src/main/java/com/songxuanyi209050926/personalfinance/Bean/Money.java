@@ -1,31 +1,47 @@
 package com.songxuanyi209050926.personalfinance.Bean;
+
 /*
 收入和支出（包括但不限于以下字段：项目名称，金额，录入时间，类别(信用卡/现金)
  */
 public class Money {
 
-    private int expenditures;
-    private int revenue;
+    private int oof;
     private String type;
     private String date;
+    private String remake;
     private String proName;
-    private int total;
-    private int balance;
-    public int getExpenditures() {
-        return expenditures;
+    private String username;
+
+    public Money() {
+
     }
 
-    public void setExpenditures(int expenditures) {
-        this.expenditures = expenditures;
+    public Money(String username, int oof, String proName, String type, String remake, String date) {
+        this.username = username;
+        this.proName = proName;
+        this.type = type;
+        this.remake = remake;
+        this.date = date;
+        this.oof = oof;
     }
 
-    public int getRevenue() {
-        return revenue;
+    public int getOof() {
+        return oof;
     }
 
-    public void setRevenue(int revenue) {
-        this.revenue = revenue;
+    public void setOof(int oof) {
+        this.oof = oof;
     }
+
+    public String getRemake() {
+        return remake;
+    }
+
+    public void setRemake(String remake) {
+        this.remake = remake;
+    }
+
+
 
     public String getType() {
         return type;
@@ -51,19 +67,11 @@ public class Money {
         this.proName = proName;
     }
 
-    public int getTotal() {
-        return total;
+    public String getUsername() {
+        return username;
     }
 
-    public void setTotal(int total) {
-        this.total = total;
-    }
-
-    public int getBalance() {
-        return balance;
-    }
-
-    public void setBalance(int balance) {
-        this.balance = balance;
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

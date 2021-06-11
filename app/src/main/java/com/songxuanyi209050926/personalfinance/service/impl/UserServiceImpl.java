@@ -1,6 +1,7 @@
 package com.songxuanyi209050926.personalfinance.service.impl;
 
 import android.content.Context;
+import com.songxuanyi209050926.personalfinance.Bean.Money;
 import com.songxuanyi209050926.personalfinance.Bean.User;
 import com.songxuanyi209050926.personalfinance.dao.UserDao;
 import com.songxuanyi209050926.personalfinance.dao.impl.UserDaoImpl;
@@ -18,5 +19,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public int signUp(Context context, String username, String phone, String password) {
         return dao.signUp(context,username,phone,password);
+    }
+
+    @Override
+    public int addMoneyInDB(Context context, Money money) {
+        return dao.addMoneyInDB(context,money);
     }
 }
