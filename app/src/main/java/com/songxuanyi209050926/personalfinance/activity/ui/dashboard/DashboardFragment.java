@@ -94,8 +94,8 @@ public class DashboardFragment extends Fragment {
 
     @Override
     public void onAttach(@NonNull @NotNull Activity activity) {
-        super.onAttach(activity);                                   //Warning，添加过一次数据后username为空，原因大致为LoginActivity被销毁，
-        username = ((MainActivity) activity).findUsername();        // 重新创建MainActivity时无法找到Login的username
+        super.onAttach(activity);
+        username = ((MainActivity) activity).findUsername();
     }
 
 }
