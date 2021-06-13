@@ -8,5 +8,4 @@
     android:id="@+id/recyclerview_home"
     tools:context=".activity.ui.home.HomeFragment"
         >
-
 </androidx.recyclerview.widget.RecyclerView>

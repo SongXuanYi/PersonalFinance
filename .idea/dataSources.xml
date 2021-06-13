@@ -8,11 +8,5 @@
       <jdbc-url>jdbc:sqlite:identifier.sqlite</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="Android SQLite" uuid="f57db154-c246-4b7d-aab1-13a910d7ada6">
-      <driver-ref>sqlite.xerial</driver-ref>
-      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\NH55\AppData\Local\JetBrains\IntelliJIdea2021.1\android\databases\SERIAL_NUMBER_399ac43f\com.songxuanyi209050926.personalfinance\internal\money</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
   </component>
 </project>

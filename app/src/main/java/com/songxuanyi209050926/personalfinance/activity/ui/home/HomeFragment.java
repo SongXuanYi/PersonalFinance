@@ -2,6 +2,7 @@ package com.songxuanyi209050926.personalfinance.activity.ui.home;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,7 @@ import java.util.List;
 
 public class HomeFragment extends Fragment {
 
+    private static final String TAG = "Money";
     private RecyclerView mMoneyRecyclerView;
     private MoneyAdapter mAdapter;
     private UserService service = new UserServiceImpl();
@@ -30,7 +32,7 @@ public class HomeFragment extends Fragment {
 
         mMoneyRecyclerView = (RecyclerView) root.findViewById(R.id.recyclerview_home);
         mMoneyRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-//        updateUI();
+        updateUI();
         return root;
     }
 
@@ -72,11 +74,12 @@ public class HomeFragment extends Fragment {
         List<Money> monies = service.findAllMoney(getContext(),username);
         mAdapter = new MoneyAdapter(monies);
         mMoneyRecyclerView.setAdapter(mAdapter);
+        Log.d(TAG, "updateUI: "+monies.size());
     }
 
     @Override
     public void onAttach(@NonNull @NotNull Activity activity) {
-        super.onAttach(activity);
+        super.onAttach(activity);                               //这里同理，找不到username;
         username=((MainActivity)activity).findUsername();
     }
 }

@@ -51,7 +51,6 @@ public class LoginActivity extends AppCompatActivity {
 
                 //实现登录界面到记账界面的跳转
                 if (user != null) {
-
                     Toast.makeText(getApplicationContext(), "欢迎您，" + user.getUsername(), Toast.LENGTH_SHORT).show();
                     Log.d("isUser", "登录成功");
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);

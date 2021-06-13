@@ -35,8 +35,7 @@ public class DashboardFragment extends Fragment {
     private int oof;
     private Money money;
     private UserService service = new UserServiceImpl();
-    private String username="宋";
-
+    private String username;
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
         //获取当地日期
@@ -62,6 +61,7 @@ public class DashboardFragment extends Fragment {
                 int i = service.addMoneyInDB(getContext(), money);
                 if (i > 0) {
                     Intent intent = new Intent(getActivity(), MainActivity.class);
+                    intent.putExtra("username",username);
                     startActivity(intent);
 
                     Log.d("DB", "收入插入成功");
@@ -82,6 +82,7 @@ public class DashboardFragment extends Fragment {
                 int i = service.addMoneyInDB(getContext(), money);
                 if (i > 0) {
                     Intent intent = new Intent(getActivity(), MainActivity.class);
+                    intent.putExtra("username",username);
                     startActivity(intent);
 
                     Log.d("DB", "支出插入成功");
@@ -93,7 +94,8 @@ public class DashboardFragment extends Fragment {
 
     @Override
     public void onAttach(@NonNull @NotNull Activity activity) {
-        super.onAttach(activity);
-        username=((MainActivity)activity).findUsername();
+        super.onAttach(activity);                                   //Warning，添加过一次数据后username为空，原因大致为LoginActivity被销毁，
+        username = ((MainActivity) activity).findUsername();        // 重新创建MainActivity时无法找到Login的username
     }
+
 }
