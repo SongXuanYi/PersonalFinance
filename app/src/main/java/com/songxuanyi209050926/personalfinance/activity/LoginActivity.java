@@ -57,7 +57,7 @@ public class LoginActivity extends AppCompatActivity {
                     intent.putExtra("username",user.getUsername());
                     startActivity(intent);
                 } else {
-                    Toast.makeText(getApplicationContext(), "登录失败", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "登录失败，用户名或密码错误", Toast.LENGTH_SHORT).show();
                     Log.d("isUser", "登录失败");
                 }
             }

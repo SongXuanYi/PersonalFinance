@@ -2,6 +2,7 @@ package com.songxuanyi209050926.personalfinance.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -11,6 +12,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.songxuanyi209050926.personalfinance.R;
 
 public class MainActivity extends AppCompatActivity {
+
+    private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
 //        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
+        textView=(TextView) findViewById(R.id.uname_text);
+        textView.setText(findUsername()+" ");
     }
 
     public String findUsername(){

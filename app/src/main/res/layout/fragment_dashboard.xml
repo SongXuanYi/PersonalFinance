@@ -19,12 +19,14 @@
             app:layout_constraintVertical_bias="0.0" app:layout_constraintEnd_toStartOf="@+id/money_text"
             android:textAlignment="center"/>
     <TextView
-            android:layout_width="146dp"
-            android:layout_height="43dp" android:id="@+id/local_time"
+            android:layout_width="250dp"
+            android:layout_height="50dp" android:id="@+id/local_time"
+            android:clickable="true"
+            android:textColor="@color/teal_700"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.032" app:layout_constraintHorizontal_bias="0.498"
-            android:gravity="center" android:textSize="18sp"/>
+            android:gravity="center" android:textSize="24sp"/>
     <TextView
             android:text="@string/leibie_text"
             android:layout_width="63dp"

@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.songxuanyi209050926.personalfinance.Bean.Money;
@@ -62,6 +63,7 @@ public class HomeFragment extends Fragment {
         moneyAdapter = new MoneyAdapter(moneyList);
         mMoneyRecyclerView.setAdapter(moneyAdapter);
         setRecyclerViewLayoutManager(LayoutManagerType.LINEAR_LAYOUT_MANAGER);
+        mMoneyRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL));
 
         return root;
     }

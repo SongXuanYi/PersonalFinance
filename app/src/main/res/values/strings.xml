@@ -3,7 +3,7 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_home">明细</string>
     <string name="title_dashboard">记账</string>
-    <string name="title_notifications">图表</string>
+    <string name="title_notifications">我的</string>
     <string name="title_activity_finance">MainActivity</string>
     <string name="please_addin">点击下方加号记一笔账吧！</string>
     <string name="income_text">收入</string>
@@ -14,4 +14,5 @@
     <string name="jine_text">金额:</string>
     <string name="hello_text">你好</string>
     <string name="title_text">小炫子记账</string>
+    <string name="zhuce_text">没有账号？点击注册</string>
 </resources>

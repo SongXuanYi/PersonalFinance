@@ -40,8 +40,15 @@
         <TextView
                 android:text="@string/title_text"
                 android:layout_width="match_parent"
-                android:layout_height="109dp" android:id="@+id/title_text" android:background="#EACC6F"
-                android:gravity="center" android:textSize="18sp"/>
+                android:typeface="monospace"
+                android:layout_height="90dp" android:id="@+id/title_text" android:background="#EACC6F"
+                android:gravity="center" android:textSize="24sp" android:textAllCaps="false"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:background="#EACC6F"
+                android:layout_height="wrap_content"
+                android:id="@+id/uname_text" android:textAlignment="viewEnd" android:textSize="18sp"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
