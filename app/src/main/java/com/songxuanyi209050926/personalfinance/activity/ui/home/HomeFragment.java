@@ -25,7 +25,7 @@ import java.util.List;
 public class HomeFragment extends Fragment {
 
     private static final String TAG = "RecyclerViewFragment";
-    private static final String KEY_LAYOUT_MANAGER = "layoutManager";
+    public static final String KEY_LAYOUT_MANAGER = "layoutManager";
     private static final int SPAN_COUNT = 2;
     private static final int DATASET_COUNT = 60;
 
@@ -101,10 +101,5 @@ public class HomeFragment extends Fragment {
         savedInstanceState.putSerializable(KEY_LAYOUT_MANAGER, mCurrentLayoutManagerType);
         super.onSaveInstanceState(savedInstanceState);
     }
-
-    /**
-     * Generates Strings for RecyclerView's adapter. This data would usually come
-     * from a local content provider or remote server.
-     */
 
 }

@@ -15,4 +15,7 @@ public interface UserService {
     int addMoneyInDB(Context context, Money money);
 
     List<Money> findAllMoney(Context context, String username);
+
+    List<Money> findByDate(Context context,String username,String date);
+
 }

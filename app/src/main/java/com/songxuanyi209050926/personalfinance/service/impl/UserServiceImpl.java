@@ -32,4 +32,9 @@ public class UserServiceImpl implements UserService {
     public List<Money> findAllMoney(Context context, String username) {
         return dao.findAllMoney(context,username);
     }
+
+    @Override
+    public List<Money> findByDate(Context context, String username, String date) {
+        return dao.findByDate(context,username,date);
+    }
 }

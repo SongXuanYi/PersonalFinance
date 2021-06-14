@@ -13,7 +13,7 @@ public class MoneyDBHelper extends SQLiteOpenHelper {
             "type text not null ," +
             "remake text ," +
             "date text not null," +
-            "oof integer)";
+            "oof real not null)";
     private Context mContext;
 
     public MoneyDBHelper(Context context, String name, SQLiteDatabase.CursorFactory cursorFactory, int version) {

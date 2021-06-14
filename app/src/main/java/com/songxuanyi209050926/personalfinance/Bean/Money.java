@@ -5,7 +5,7 @@ package com.songxuanyi209050926.personalfinance.Bean;
  */
 public class Money {
     private int mid;
-    private int oof;
+    private double oof;
     private String type;
     private String date;
     private String remake;
@@ -16,7 +16,7 @@ public class Money {
 
     }
 
-    public Money(String username, int oof, String proName, String type, String remake, String date) {
+    public Money(String username, double oof, String proName, String type, String remake, String date) {
         this.username = username;
         this.proName = proName;
         this.type = type;
@@ -33,7 +33,7 @@ public class Money {
         this.mid = mid;
     }
 
-    public int getOof() {
+    public double getOof() {
         return oof;
     }
 
@@ -48,7 +48,6 @@ public class Money {
     public void setRemake(String remake) {
         this.remake = remake;
     }
-
 
     public String getType() {
         return type;

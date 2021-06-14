@@ -37,7 +37,7 @@ public class DashboardFragment extends Fragment {
     private EditText mRemakeText;
 
     private String proName, type, remake, nowDate;
-    private int oof;
+    private double oof;
     private Money money;
     private UserService service = new UserServiceImpl();
     private String username;
