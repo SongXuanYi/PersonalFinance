@@ -89,7 +89,7 @@ public class UserDaoImpl implements UserDao {
             String type = cursor.getString(cursor.getColumnIndex("type"));
             String remake = cursor.getString(cursor.getColumnIndex("remake"));
             String date = cursor.getString(cursor.getColumnIndex("date"));
-            double oof = cursor.getInt(cursor.getColumnIndex("oof"));
+            double oof = cursor.getDouble(cursor.getColumnIndex("oof"));
             money = new Money(username, oof, proName, type, remake, date);
             money.setMid(mid);
             list.add(money);

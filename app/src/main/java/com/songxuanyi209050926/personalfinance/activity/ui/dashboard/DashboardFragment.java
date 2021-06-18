@@ -64,7 +64,7 @@ public class DashboardFragment extends Fragment {
             public void onClick(View v) {
 
                 proName = mProNameText.getText().toString();
-                oof = Integer.parseInt(mMoneyText.getText().toString());
+                oof = Double.valueOf(mMoneyText.getText().toString());
                 type = mTypeText.getText().toString();
                 remake = mRemakeText.getText().toString();
                 money = new Money(username, oof, proName, type, remake, nowDate);
@@ -84,7 +84,7 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 proName = mProNameText.getText().toString();
-                oof = -Integer.parseInt(mMoneyText.getText().toString());
+                oof = -Double.valueOf(mMoneyText.getText().toString());
                 type = mTypeText.getText().toString();
                 remake = mRemakeText.getText().toString();
                 money = new Money(username, oof, proName, type, remake, nowDate);

@@ -23,7 +23,7 @@ public class MoneyAdapter extends RecyclerView.Adapter<MoneyAdapter.ViewHolder> 
     public ViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.home_rv, parent, false);
-        return  new ViewHolder(view);
+        return new ViewHolder(view);
     }
     //设置数据
     @Override
